@@ -1,0 +1,9 @@
+<Questions>
+	<Question correct="1">
+		<questionText>Als toestemming is gegeven om de camera te gebruiken, kan een app deze op elk moment activeren. Ook als de gebruiker niets door heeft.</questionText>
+		<option1>Gebruikers hebben hun app altijd onder controle. Als toestemming wordt gegeven om een camera te gebruiken, kan een app deze pas gebruiken als de gebruiker deze activeert.</option1>
+		<option2>Als een persoon wordt gefilmd binnen een bedrijf, mag deze persoon eisen de beelden terug te zien.</option2>
+		<option3>Bedrijven mogen data van een gebruiker niet verwerken als hier geen toestemming voor is gegeven.</option3>
+		<option4>Er zijn maar 3 opties.</option4>
+	</Question>
+</Questions>

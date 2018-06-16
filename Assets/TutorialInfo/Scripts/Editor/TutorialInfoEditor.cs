@@ -18,7 +18,7 @@ public class TutorialInfoEditor : Editor
 		EditorGUI.BeginChangeCheck ();
 
 		base.OnInspectorGUI ();
-
+        
 		if (EditorGUI.EndChangeCheck ()) 
 		{
 			PlayerPrefs.SetInt(TutorialInfo.showAtStartPrefsKey, ((TutorialInfo)target).showAtStart ? 1 : 0);
