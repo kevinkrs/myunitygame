@@ -93,11 +93,20 @@ public class Player : MovingObject {
 		if(other.tag == "Exit"){
 			// Invoke("Restart",restartLevelDelay);
 			// enabled = false;
-			Debug.Log("Reached the stairs, gz!");
+			// Debug.Log("Reached the stairs, gz!");
 		}
 		else if(other.tag == "Enemy"){
 			Debug.Log("Enemy! lookout");
 		}
+		else if(other.tag == "question"){
+			questionTrigger qt = other.GetComponent<questionTrigger>();
+			Debug.Log(" question: "+qt.questionID);
+		}
+		else if(other.tag == "info"){
+			infoTrigger it = other.GetComponent<infoTrigger>();
+			Debug.Log(" info: "+it.infoID);
+		}
+ 
 	}
 
 

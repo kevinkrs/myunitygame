@@ -44,6 +44,8 @@ public class BoardManager : MonoBehaviour {
 		int _col = 0;
 		int _row = 0;	
 		mapGrid = mapManager.initMapData();
+		int questionCounter = 0;
+		int infoCounter = 0;
 		for(int i = mapGrid.Count-1; i> -1;i--){
 			for(int z = 0; z <mapGrid[i].Count ;z++){
 				// full generation
@@ -56,10 +58,25 @@ public class BoardManager : MonoBehaviour {
 					instance.transform.SetParent(boardHolder);
 
 				}
+				
 				if(nodeContent != 0){
 					GameObject toInstantiate = nodeTiles[nodeContent-1];
 					GameObject instance = Instantiate(toInstantiate, new Vector3 (_row,_col,0f), Quaternion.identity) as GameObject;   
+					if(nodeContent == 38){
+						Debug.Log("spawning questions");
+						     questionTrigger qt = instance.GetComponent<questionTrigger>();
+							 qt.questionID = questionCounter;
+							 questionCounter = questionCounter +1;
+					}else if(nodeContent == 78){
+						Debug.Log("spawning info");
+						     infoTrigger it = instance.GetComponent<infoTrigger>();
+							 it.infoID = infoCounter;
+							 infoCounter = infoCounter +1;
+					}else{
+
+					}
 					instance.transform.SetParent(boardHolder);
+	
 				}
 				// events
 				if(tileContent == 1){
