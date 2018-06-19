@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class questionLoader : MonoBehaviour {
     public Text questionText;
@@ -74,6 +76,9 @@ public class questionLoader : MonoBehaviour {
     private bool answerCorrect(int answer)
     {
         //TODO Doe wat er ook moet gebeuren wanneer het antwoord goed is.
+        SceneManager.UnloadSceneAsync("questionScne");
+
         return answer == correctValue;
+
     }
 }

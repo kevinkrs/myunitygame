@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MovingObject {
 	public Text foodText;
@@ -74,7 +75,6 @@ public class Player : MovingObject {
 	protected override void AttemptMove<T>(int xDir, int yDir){
 		// food = food -1;
 		// foodText.text = "Food: "+ food;
-		
 		if(!GameManager.instance.battle){
 			base.AttemptMove <T> (xDir,yDir);
 			RaycastHit2D hit;
@@ -101,6 +101,8 @@ public class Player : MovingObject {
 		else if(other.tag == "question"){
 			questionTrigger qt = other.GetComponent<questionTrigger>();
 			Debug.Log(" question: "+qt.questionID);
+			SceneManager.LoadScene("questionScne", LoadSceneMode.Additive);
+
 		}
 		else if(other.tag == "info"){
 			infoTrigger it = other.GetComponent<infoTrigger>();

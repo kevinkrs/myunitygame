@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
-	public float turnDelay = .1f;
+	public float turnDelay = 0f;
 	private List<Enemy> enemies;
 	public float levelStartDelay = 2f;
 	private Text levelText;
@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour {
 		if(playersTurn || enemyesMoving || doingSetup){
 			return;
 		}	
+		
 		StartCoroutine(MoveEnemies());
 
 	}
@@ -75,9 +76,9 @@ public class GameManager : MonoBehaviour {
 	IEnumerator MoveEnemies(){
 		if(!battle){
 			enemyesMoving = true;
-			yield return new WaitForSeconds(turnDelay);
+			yield return new WaitForSecondsRealtime(0.05f);
 			if(enemies.Count == 0){
-				yield return new WaitForSeconds(turnDelay);
+				yield return new WaitForSecondsRealtime(0.05f);
 			}
 
 			for(int i = 0; i < enemies.Count;i++){
